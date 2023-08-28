@@ -1,0 +1,305 @@
+:root {
+    --c1: hsl(276, 100%, 81%);
+    --c2: hsl(276, 55%, 52%);
+    --c3: hsl(271, 15%, 43%);
+    --c4: hsl(206, 6%, 79%);
+    --c5: hsl(271, 36%, 24%);
+    --c6: hsl(270, 7%, 64%);
+    
+    --c7: hsl(293, 100%, 63%);
+    --c8: hsl(264, 100%, 61%);
+
+    --c9: hsl(0, 0%, 100%);
+    --c10: hsl(270, 20%, 96%);
+    --c11: hsl(271, 36%, 24%);
+    --c12: hsl(289, 100%, 72%);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+}
+p {
+    font-size: .6rem;
+}
+body {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: var(--c10);
+    gap: 7rem;
+}
+.bg-1 {
+    background-image: linear-gradient(to bottom, var(--c7), var(--c8));
+    position: absolute;
+    height: 90%;
+    width: 40%;
+    top: 0;
+    left: -170px;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    z-index: -1;
+    transition-duration: .5s;
+}
+.phone {
+    background-color: var(--c9);
+    border: .5rem solid white;
+    border-radius: 1.3rem;
+    box-shadow: 1px 1px 1rem var(--c6);
+    width: 15.625rem;
+}
+.phone .top-phone {
+    background-image: linear-gradient(to left, var(--c7), var(--c8));
+    border-top-left-radius: 1.3rem;
+    border-top-right-radius: 1.3rem;
+    border-bottom-left-radius: .5rem;
+    border-bottom-right-radius: .5rem;
+    padding: 0 .7rem .5rem .7rem;
+}
+.phone .top-phone .notch {
+    background-color: white;
+    width: 63%;
+    height: 1rem;
+    margin: 0 auto;
+    border-bottom-left-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
+    margin-bottom: .4rem;
+}
+.phone .top-phone .profile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.phone .top-phone .profile .left-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.phone .top-phone .profile .left-profile button,
+.phone .top-phone .profile .right-profile button {
+    border: 0;
+    background: transparent;
+}
+.phone .top-phone .profile .left-profile button .arrow-left {
+    width: .6rem;
+    height: .6rem;
+    border-top: 2px solid var(--c9);
+    border-left: 2px solid var(--c9);
+    transform: rotate(-45deg);
+}
+.phone .top-phone .profile .left-profile > img {
+    width: 2rem;
+    border: 1px solid white;
+    border-radius: 50%;
+}
+.phone .top-phone .profile .left-profile .name .namee {
+    color: var(--c9);
+    margin-bottom: .1rem;
+    font-size: .8rem;
+    font-weight: 500;
+}
+.phone .top-phone .profile .left-profile .name .available {
+    color: var(--c1);
+    font-size: .6rem;
+}
+.phone .top-phone .profile .right-profile button .options {
+    border-left: 3px dotted var(--c9);
+    height: .85rem;
+}
+.phone .chat {
+    padding: 1rem .5rem .7rem .7rem;
+    background-color: var(--c10);
+    border-bottom-left-radius: 1.3rem;
+    border-bottom-right-radius: 1.3rem;
+}
+.phone .chat .msg {
+    max-width: fit-content;
+    width: 75%;
+    padding: .5rem;
+    margin-bottom: .5rem;
+    border-radius: .5rem;
+}
+.phone .chat .msg.recieved {
+    color: var(--c2);
+    background-color: hsla(276, 55%, 52%, 9%);
+}
+.phone .chat .card.recieved {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-image: linear-gradient(to left, var(--c7), var(--c8));
+    margin-bottom: .5rem;
+    width: 75%;
+    border-radius: .5rem;
+    padding: .5rem .8rem;
+    color: var(--c9);
+}
+.phone .chat .card.recieved .left-card .round {
+    opacity: .75;
+    font-size: .6rem;
+    display: flex;
+    align-items: center;
+    gap: .3rem;
+    position: relative;
+}
+.round label {
+    background: transparent;
+    border: 1px solid white;
+    border-radius: 50%;
+    height: 1rem;
+    width: 1rem;
+    position: absolute;
+    left: -3px;
+}
+.round label::after {
+    content: "";
+    border: 2px solid white;
+    border-top: none;
+    border-right: none;
+    height: .3rem;
+    width: .5rem;
+    position: absolute;
+    transform: rotate(-45deg);
+    top: .15rem;
+    left: .1rem;
+    opacity: 0;
+}
+.round input[type="checkbox"] {
+    visibility: hidden;
+}
+.round input[type="checkbox"]:checked + label {
+    background-color: #66bb6a;
+    border-color: #66bb6a;
+}  
+.round input[type="checkbox"]:checked + label:after {
+    opacity: 1;
+}
+.phone .chat .card.recieved .price {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+/* .phone .chat .card.recieved .round {
+    position: relative;
+}
+.phone .chat .card.recieved .round label {
+    position: absolute;
+    background-color: transparent;
+} */
+.phone .chat .msg.sent {
+    color: var(--c3);
+    background-color: var(--c9);
+    margin-left: auto;
+}
+.phone .chat .msg-pic {
+    max-width: fit-content;
+    margin-bottom: .5rem;
+    margin-left: auto;
+}
+.phone .chat .msg-pic > img {
+    width: 2.8rem;
+    border-radius: .5rem;
+}
+.phone .chat .write-message {
+    position: relative;
+}
+.phone .chat .write-message input {
+    padding: .6rem;
+    border-radius: 1rem;
+    width: 100%;
+    border: 2px solid hsla(289, 100%, 72%, 40%);
+    transition: .5s;
+    font-size: .6rem;
+}
+.phone .chat .write-message input::placeholder {
+    color: var(--c4);
+}
+.phone .chat .write-message input:focus {
+    border: 2px solid var(--c12);
+    outline: var(--c12);
+}
+.phone .chat .write-message button {
+    position: absolute;
+    right: .5rem;
+    bottom: 50%;
+    transform: translateY(50%);
+    border: 0;
+    background-color: var(--c11);
+    border-radius: 50%;
+    width: 1.6rem;
+    height: 1.6rem;
+}
+.phone .chat .write-message button::after {
+    content: "";
+    border-top: 2px solid white;
+    border-right: 2px solid white;
+    position: absolute;
+    width: .5rem;
+    height: .5rem;
+    transform: rotate(45deg);
+    top: 32%;
+    left: 25%;
+}
+.simple-booking {
+    max-width: 45ch;
+    transition-duration: .5s;
+}
+.simple-booking h1{
+    color: var(--c5);
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+}
+.simple-booking p {
+    color: var(--c6);
+    line-height: 1.3rem;
+    font-size: 1rem;
+}
+@media (max-width:1200px) {
+    .bg-1 {
+        left: -120px;
+    }
+    body {
+        gap: 5rem;
+    }
+    .simple-booking {
+        max-width: 40ch;
+    }
+}
+@media (max-width: 1000px) {
+    .bg-1 {
+        left: -70px;
+    }
+    body {
+        gap: 3rem;
+    }
+    .simple-booking {
+        max-width: 35ch;
+    }
+}
+@media (max-width: 768px) {
+    .bg-1 {
+        height: 40%;
+    }
+    body {
+        flex-direction: column;
+        height: fit-content;
+        padding: 3rem 1rem;
+    }
+    .simple-booking {
+        max-width: 100%;
+        text-align: center;
+    }
+}
+@media (max-width: 600px) {
+    .bg-1 {
+        left: -20px;
+    }
+}
+@media (max-width: 450px) {
+    .bg-1 {
+        left: 0;
+    }
+
+}
